@@ -11,6 +11,14 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     get root_path
     assert flash.empty?
   end
+
+  test "login with correct information" do
+    get login_path
+    assert_template 'sessions/new'
+    post login_path, params: { session: { username: "helloworld", password: "helloworld" } }
+    assert_template '/'
+  end
+
 end
 
 #Visit the login path.

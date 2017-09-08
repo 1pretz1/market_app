@@ -1,8 +1,9 @@
 <h1> This is the homepage </h1>
 
 <% if logged_in? %>
+  <%= link_to @user.username, user_path(@user.id) %></br>
   <%= link_to "Log out", logout_path, method: :delete %>
 <% else %>
   <%= link_to "Log in", login_path %></br>
   <%= link_to "Sign up", new_user_path  %>
- <% end %>
+<% end %>
