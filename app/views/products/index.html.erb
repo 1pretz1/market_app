@@ -1,0 +1,16 @@
+<div class="list5" >
+  <% @products.each do |product| %>
+    <ol>
+      <li><strong><%= product.name %></strong>
+      <p>
+      <%= image_tag product.image_url.thumb.url, :class => "style_image" %>
+      </p>
+      <ol>
+        <li>Category: <%= product.category %></li>
+        <li>Description: <%= product.description %></li>
+        <li>£<%= product.price %></li>
+      </ol>
+      </li>
+    </ol>
+  <% end %>
+</div>

@@ -1,0 +1,19 @@
+<h1 align='center'> Product page </h1>
+
+<style>
+  div { text-align:center; }
+  div ul { display:inline-table;}
+  div ul li {display:inline;}
+</style>
+
+<div align='center'>
+  <p> <%= @product.user.username %> Item; </p></br>
+
+  <h2> <%= @product.name %> </h2></br>
+  <%= image_tag @product.image_url.thumb.url %></br>
+  <ul style="list-style-type: none;">
+    <li> <%= @product.category %> </li></br>
+    <li> <%= @product.description %> </li></br>
+    <li> <%= @product.price %> </li>
+  </ul>
+</div>

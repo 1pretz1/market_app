@@ -17,3 +17,5 @@ class SessionsController < ApplicationController
     logout
     redirect_to '/'
   end
+
+end

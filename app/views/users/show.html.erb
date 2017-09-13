@@ -1,1 +1,19 @@
-<h1> Hi, <%= @user.username %>! </h1>
+<h1 align='center'> Hi, <%= @user.username %>! </h1>
+
+<div align='center'>
+  <p> <%= link_to 'List new item', new_product_path %> </p>
+  <% @user.products.each do |product| %>
+    <ul style="list-style-type: none;" >
+      <li><%= product.name %>
+      <%= product.description %>
+      <% if logged_in? && current_user == product.user %>
+        <%= link_to 'Edit', edit_product_path(product) %>
+        <%= link_to 'Show', product_path(product) %>
+        <%= link_to 'Delete', product_path(product), method: :delete, data: {confirm: "Are you sure?"} %>
+      <% end %>
+      <small>,
+        <%= time_ago_in_words(product.created_at) %> ago,
+        last updated: <%= time_ago_in_words(product.updated_at) %> ago</small></li>
+    </ul>
+  <% end %>
+</div>

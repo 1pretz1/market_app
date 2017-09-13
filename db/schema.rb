@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906135215) do
+ActiveRecord::Schema.define(version: 20170912161032) do
+
+  create_table "Products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "category"
+    t.decimal "price"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_url"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "image_url"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -19,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170906135215) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
   end
 
 end

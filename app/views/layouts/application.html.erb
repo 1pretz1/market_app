@@ -6,9 +6,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <h1 align='center'>Peters Market</h1>
+    <div class='banner-widget'>
+      <ul>
+        <% @user = current_user %>
+          <li><%= link_to 'Home', root_path  %></li>
+          <li><%= link_to "Item List", products_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to @user.username, user_path(@user.id) %></li>
+          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+          <li><%= link_to "Sign up", new_user_path  %></li>
+        <% end %>
+      </ul>
+    </div>
   </head>
 
   <body>
     <%= yield %>
   </body>
 </html>
+

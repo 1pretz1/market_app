@@ -1,0 +1,9 @@
+.list5 {
+  color:black;
+  text-align:center;
+  .style_image { border-radius: 50px; }
+  ol { list-style-type: none; font-size:18px; }
+  ol li { }
+  ol li ol { list-style-image: url("../images/nested.png"); padding:5px 0 5px 18px; font-size:15px; }
+  ol li ol li { margin: 0 0 5px 0; list-style-type: none; color:black; height:15px; margin-right: 17px;  }
+ }

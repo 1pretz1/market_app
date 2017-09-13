@@ -1,0 +1,37 @@
+<h1 align='center'> New Product </h1>
+<div align="center">
+  <%= form_for @product do |f| %>
+    <p>
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :description %><br/>
+      <%= f.text_field :description %>
+    </p>
+    <p>
+      <%= f.label :category %><br/>
+      <%= f.text_field :category %>
+    </p>
+    <p>
+      <%= f.label :price %><br/>
+      <%= f.text_field :price %>
+    </p>
+    <p>
+      <%= f.label :image_url %></br>
+      <%= f.file_field :image_url %></li>
+    </p>
+    <p>
+    <%= f.submit %>
+    </p>
+  <% end %>
+</div>
+
+<% if @product.errors.any? %>
+  <h2>The following errors stopped the article from saving</h2>
+  <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
