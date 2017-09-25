@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <h1 align='center'>Peters Market</h1>
+    <h1 align='center';>Peters Market</h1>
     <div class='banner-widget'>
       <ul>
         <% @user = current_user %>
@@ -23,8 +23,8 @@
     </div>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class='background_image'>
+        <%= yield %>
   </body>
 </html>
 

@@ -3,11 +3,13 @@
     <ol>
       <li><strong><%= product.name %></strong>
       <p>
-      <%= image_tag product.image_url.thumb.url, :class => "style_image" %>
+      <%= link_to product_path(product) do %>
+        <%= image_tag product.image_url.thumb.url, :class => "style_image" %>
+      <% end %>
       </p>
       <ol>
-        <li>Category: <%= product.category %></li>
-        <li>Description: <%= product.description %></li>
+        <li><strong>Category:</strong> <%= product.category %></li>
+        <li><strong>Description:</strong> <%= product.description %></li>
         <li>£<%= product.price %></li>
       </ol>
       </li>

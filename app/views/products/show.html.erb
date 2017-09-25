@@ -1,19 +1,14 @@
-<h1 align='center'> Product page </h1>
-
-<style>
-  div { text-align:center; }
-  div ul { display:inline-table;}
-  div ul li {display:inline;}
-</style>
-
-<div align='center'>
-  <p> <%= @product.user.username %> Item; </p></br>
-
-  <h2> <%= @product.name %> </h2></br>
-  <%= image_tag @product.image_url.thumb.url %></br>
-  <ul style="list-style-type: none;">
-    <li> <%= @product.category %> </li></br>
-    <li> <%= @product.description %> </li></br>
-    <li> <%= @product.price %> </li>
-  </ul>
+<div class="list5" >
+    <ol>
+      <li><strong><%= @product.name %></strong>
+      <p>
+        <%= image_tag @product.image_url.thumb.url, :class => "style_image" %>
+      </p>
+      <ol>
+        <li><strong>Category:</strong> <%= @product.category %></li>
+        <li><strong>Description:</strong> <%= @product.description %></li>
+        <li>£<%= @product.price %></li>
+      </ol>
+      </li>
+    </ol>
 </div>
