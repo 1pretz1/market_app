@@ -10,4 +10,7 @@ class Product < ApplicationRecord
   validates :category, presence: true
   validates :price, presence: true
   validates :image_url, presence: true
+
+  scope :price_is_over, where(:price => 'red')
+
 end

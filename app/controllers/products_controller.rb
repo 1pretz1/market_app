@@ -19,6 +19,15 @@ class ProductsController < ApplicationController
     find_product
   end
 
+  def update
+    @product = find_product
+    if @product.update_attributes(product_params)
+      redirect_to product_path(@product)
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     find_product
     @user_id = @product.user.id
